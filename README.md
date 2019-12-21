@@ -179,7 +179,9 @@ export default {
   }, 12000)
 </script>
 ```
-
+> 效果如下
+![](http://img.pqs.guozhaoxi.top/Amaranthe%20-%20Digital%20World_2.gif)
+加载慢的同学可以看 http://img.pqs.guozhaoxi.top/20191221175917.MP4
 
 ## 三、参数解析 ( Parameter configuration )
 
