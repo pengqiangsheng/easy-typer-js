@@ -1,0 +1,76 @@
+<script src="../lib/esayTyped.test.js"></script>
+<style>
+  .easy-typed-cursor {
+    margin-left: 10px;
+    opacity: 1;
+    -webkit-animation: blink 0.7s infinite;
+    -moz-animation: blink 0.7s infinite;
+    animation: blink 0.7s infinite;
+  }
+  @keyframes blink {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  @-webkit-keyframes blink {
+    0% {
+      opacity: 1;
+    }
+      
+    50% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  @-moz-keyframes blink {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+    
+</style>
+<div id="output">
+
+</div>
+<script>
+  const obj = {
+    output: '', // 输出内容  使用MVVM框架时可以直接使用
+    type: 'normal',
+    isEnd: false,
+    speed: 80,
+    backSpeed: 40,
+    sleep: 3000,
+    singleBack: true
+  }
+  const typing = new EasyTyped(obj, `黎明前的黑暗是最深不见底的黑暗！`, (instance)=>{
+    // 回调函数 如果这里使用了递归调用会一直循环打印，需要在外部触发停止
+    // 此回调用于获取新的数据然后重新输出
+    instance.input = `天不生我彭小呆，万古长青一生狂！`
+    instance.play()
+  }, (output, instance)=>{
+    // 钩子函数，每一帧的数据获取和实例EasyTyped的获取
+    document.getElementById('output').innerHTML = `${output}<span class="easy-typed-cursor">|</span>`
+  })
+  // 12秒后停止
+  let timer = setTimeout(() => {
+    clearTimeout(timer)
+    timer = null
+    typing.close()
+    alert('stop!')
+  }, 12000)
+</script>
