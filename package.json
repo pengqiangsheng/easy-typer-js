@@ -10,7 +10,9 @@
     "Typed",
     "Typing",
     "easyTyped",
-    "easy"
+    "easy",
+    "easy-typed",
+    "easy-typed-js"
   ],
   "license": "MIT"
 }
