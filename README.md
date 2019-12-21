@@ -30,10 +30,10 @@ const typed = new EasyTyper(obj, input, fn, hooks)
 
 ```
 // 下载至本地
-<script src="./easy-typer-js.js"></script>
+<script src="./easy-typer-js"></script>
 
 //cdn导入
-<script src="https://cdn.jsdelivr.net/npm/easy-typer-js@1.0.0/index.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/easy-typer-js@1.0.1/easyTyper.min.js"></script>
 ```
 ## 2.完整实战使用一言Api进行打字机循环输出效果
 
@@ -245,4 +245,4 @@ export default {
 ## 四、更多请查阅
 - easy-typer-js官网: http://inner.ink
 - Github文档地址: https://github.com/pengqiangsheng/easy-typer-js.js
-- CDN地址: https://cdn.jsdelivr.net/npm/easy-typer-js@1.0.0/index.min.js
+- CDN地址: https://cdn.jsdelivr.net/npm/easy-typer-js@1.0.1/easyTyper.min.js
