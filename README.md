@@ -1,7 +1,7 @@
 # easyTyped.js
-<a href="https://www.npmjs.com/package/easyTyped.js"><img src="https://img.shields.io/npm/v/easyTyped.js.svg" alt="Version"></a>
-<a href="https://www.npmjs.com/package/easyTyped.js"><img src="https://img.shields.io/npm/l/easyTyped.js.svg" alt="License"></a>
-<a href="https://npmcharts.com/compare/easyTyped.js?minimal=true"><img src="https://img.shields.io/npm/dm/easyTyped.js.svg" alt="Downloads"></a>
+<a href="https://www.npmjs.com/package/easy-typed-js"><img src="https://img.shields.io/npm/v/easy-typed-js.svg" alt="Version"></a>
+<a href="https://www.npmjs.com/package/easy-typed-js"><img src="https://img.shields.io/npm/l/easy-typed-js.svg" alt="License"></a>
+<a href="https://npmcharts.com/compare/easy-typed-js?minimal=true"><img src="https://img.shields.io/npm/dm/easy-typed-js.svg" alt="Downloads"></a>
 
 > 功能十分强大打字机插件，兼容原生JS和MVVM类框架（Vue, React...），随心所欲的输出。
 
@@ -15,13 +15,13 @@ easyTyped.js是一个轻量级的插件, 用于实现页面文字的打字机效
 - 方法1: ES6模块化引入(官方推荐)
 ```js
 // 安装
-npm install easyTyped.js --save
+npm install easy-typed-js --save
 或者
-yarn add easyTyped.js
+yarn add easy-typed-js
 ```
 ```js
 // 引入
-import EasyTyped from 'easyTyped.js'
+import EasyTyped from 'easy-typed-js'
 // 实例化
 const typed = new EasyTyped(obj, input, fn, hooks)
 ```
@@ -33,7 +33,7 @@ const typed = new EasyTyped(obj, input, fn, hooks)
 <script src="./easyTyped.js"></script>
 
 //cdn导入
-<script src="https://cdn.jsdelivr.net/npm/easyTyped.js@1.0.0/index.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/easy-typed-js@1.0.0/index.min.js"></script>
 ```
 ## 2.完整实战使用一言Api进行打字机循环输出效果
 
@@ -245,4 +245,4 @@ export default {
 ## 四、更多请查阅
 - easyTyped.js官网: http://inner.ink
 - Github文档地址: https://github.com/pengqiangsheng/easyTyped.js
-- CDN地址: https://cdn.jsdelivr.net/npm/easyTyped.js@1.0.0/index.min.js
+- CDN地址: https://cdn.jsdelivr.net/npm/easy-typed-js@1.0.0/index.min.js

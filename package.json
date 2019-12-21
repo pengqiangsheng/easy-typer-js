@@ -1,5 +1,5 @@
 {
-  "name": "easyTyped.js",
+  "name": "easy-typed-js",
   "version": "1.0.0",
   "description": "Very powerful JS typewriter plugin, compatible with native JS and MVVM class framework (Vue, React...), whatever you want to output.",
   "repository": "https://github.com/pengqiangsheng/easyTyped.js",
