@@ -1,3 +1,3 @@
-import EasyTyped from './src/lib/easyTyped.origin'
+import EasyTyper from './src/lib/easyTyper.origin'
 
-export default EasyTyped
+export default EasyTyper

@@ -21,9 +21,9 @@ yarn add easy-typer-js
 ```
 ```js
 // 引入
-import EasyTyped from 'easy-typer-js'
+import EasyTyper from 'easy-typer-js'
 // 实例化
-const typed = new EasyTyped(obj, input, fn, hooks)
+const typed = new EasyTyper(obj, input, fn, hooks)
 ```
 
 - 方法2: 常规导入
@@ -83,7 +83,7 @@ export default {
     },
     initTyped(input, fn, hooks) {
       const obj = this.obj
-      const typed = new EasyTyped(obj, input, fn, hooks)
+      const typed = new EasyTyper(obj, input, fn, hooks)
     }
   }
 }
@@ -185,7 +185,7 @@ export default {
 
 ## 三、参数解析 ( Parameter configuration )
 
-### 3.1 new EasyTyped(obj, input, fn, hooks)
+### 3.1 new EasyTyper(obj, input, fn, hooks)
 
 |参数|	说明	|回调 | 是否必须|
 |---|-------|-----|------|

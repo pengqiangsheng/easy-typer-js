@@ -5,7 +5,7 @@
  * @param {* 完成一次output输出后的回调函数} fn
  * @param {*钩子 钩在每一帧将要完成的时间片段上} hooks
  */
-class EasyTyped {
+class EasyTyper {
   // 构造器
   constructor(obj, input, fn, hooks) {
     this.props = {
