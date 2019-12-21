@@ -1,27 +1,27 @@
-# easyTyped.js
-<a href="https://www.npmjs.com/package/easy-typed-js"><img src="https://img.shields.io/npm/v/easy-typed-js.svg" alt="Version"></a>
-<a href="https://www.npmjs.com/package/easy-typed-js"><img src="https://img.shields.io/npm/l/easy-typed-js.svg" alt="License"></a>
-<a href="https://npmcharts.com/compare/easy-typed-js?minimal=true"><img src="https://img.shields.io/npm/dm/easy-typed-js.svg" alt="Downloads"></a>
+# easy-typer-js
+<a href="https://www.npmjs.com/package/easy-typer-js"><img src="https://img.shields.io/npm/v/easy-typer-js.svg" alt="Version"></a>
+<a href="https://www.npmjs.com/package/easy-typer-js"><img src="https://img.shields.io/npm/l/easy-typer-js.svg" alt="License"></a>
+<a href="https://npmcharts.com/compare/easy-typer-js?minimal=true"><img src="https://img.shields.io/npm/dm/easy-typer-js.svg" alt="Downloads"></a>
 
 > 功能十分强大打字机插件，兼容原生JS和MVVM类框架（Vue, React...），随心所欲的输出。
 
 # 一、效果展示
 ![](https://user-gold-cdn.xitu.io/2019/12/21/16f27c7653b345ee?w=1920&h=1080&f=gif&s=3531097)
-easyTyped.js是一个轻量级的插件, 用于实现页面文字的打字机效果. 它使用起来非常简单, 只需要几行代码就能实现高大上的打字机效果.而且对MVVM框架支持完美，还兼容原生JS.
+easy-typer-js是一个轻量级的插件, 用于实现页面文字的打字机效果. 它使用起来非常简单, 只需要几行代码就能实现高大上的打字机效果.而且对MVVM框架支持完美，还兼容原生JS.
 
-# 二. 使用easyTyped.js
+# 二. 使用easy-typer-js
 
-## 1. 引入Type.js
+## 1. 引入easy-typer-js
 - 方法1: ES6模块化引入(官方推荐)
 ```js
 // 安装
-npm install easy-typed-js --save
+npm install easy-typer-js --save
 或者
-yarn add easy-typed-js
+yarn add easy-typer-js
 ```
 ```js
 // 引入
-import EasyTyped from 'easy-typed-js'
+import EasyTyped from 'easy-typer-js'
 // 实例化
 const typed = new EasyTyped(obj, input, fn, hooks)
 ```
@@ -30,10 +30,10 @@ const typed = new EasyTyped(obj, input, fn, hooks)
 
 ```
 // 下载至本地
-<script src="./easyTyped.js"></script>
+<script src="./easy-typer-js.js"></script>
 
 //cdn导入
-<script src="https://cdn.jsdelivr.net/npm/easy-typed-js@1.0.0/index.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/easy-typer-js@1.0.0/index.min.js"></script>
 ```
 ## 2.完整实战使用一言Api进行打字机循环输出效果
 
@@ -161,13 +161,13 @@ export default {
     sleep: 3000,
     singleBack: true
   }
-  const typing = new EasyTyped(obj, `黎明前的黑暗是最深不见底的黑暗！`, (instance)=>{
+  const typing = new easy-typer-js(obj, `黎明前的黑暗是最深不见底的黑暗！`, (instance)=>{
     // 回调函数 如果这里使用了递归调用会一直循环打印，需要在外部触发停止
     // 此回调用于获取新的数据然后重新输出
     instance.input = `天不生我彭小呆，万古长青一生狂！`
     instance.play()
   }, (output, instance)=>{
-    // 钩子函数，每一帧的数据获取和实例EasyTyped的获取
+    // 钩子函数，每一帧的数据获取和实例easy-typer-js的获取
     document.getElementById('output').innerHTML = `${output}<span class="easy-typed-cursor">|</span>`
   })
   // 12秒后停止
@@ -191,8 +191,8 @@ export default {
 |---|-------|-----|------|
 |`obj`|	配置对象 |	无 | 必须一定有且格式要对，十分严格，比起教导主任毫不逊色|
 |`input`|	内容输入 |	无 | 可以没有，会有小彩蛋|
-|`fn`|	完成一次output输出后的回调函数 |	当前EasyTyped实例instance | 否 |
-|`hooks`|	钩子 钩在每一帧将要完成的时间片段上 | 当前帧输出的内容、当前EasyTyped实例instance | 否 |
+|`fn`|	完成一次output输出后的回调函数 |	当前easy-typer-js实例instance | 否 |
+|`hooks`|	钩子 钩在每一帧将要完成的时间片段上 | 当前帧输出的内容、当前easy-typer-js实例instance | 否 |
 
 > 使用方法如下（仅供参考）
 ```js
@@ -205,13 +205,13 @@ export default {
     sleep: 3000,
     singleBack: true
   }
-  const typing = new EasyTyped(obj, `黎明前的黑暗是最深不见底的黑暗！`, (instance)=>{
+  const typing = new easy-typer-js(obj, `黎明前的黑暗是最深不见底的黑暗！`, (instance)=>{
     // 回调函数 如果这里使用了递归调用会一直循环打印，需要在外部触发停止
     // 此回调用于获取新的数据然后重新输出
     instance.input = `天不生我彭小呆，万古长青一生狂！`
     instance.play()
   }, (output, instance)=>{
-    // 钩子函数，每一帧的数据获取和实例EasyTyped的获取
+    // 钩子函数，每一帧的数据获取和实例easy-typer-js的获取
     document.getElementById('output').innerHTML = `${output}<span class="easy-typed-cursor">|</span>`
   })
   // 12秒后停止
@@ -243,6 +243,6 @@ export default {
 
 
 ## 四、更多请查阅
-- easyTyped.js官网: http://inner.ink
-- Github文档地址: https://github.com/pengqiangsheng/easyTyped.js
-- CDN地址: https://cdn.jsdelivr.net/npm/easy-typed-js@1.0.0/index.min.js
+- easy-typer-js官网: http://inner.ink
+- Github文档地址: https://github.com/pengqiangsheng/easy-typer-js.js
+- CDN地址: https://cdn.jsdelivr.net/npm/easy-typer-js@1.0.0/index.min.js

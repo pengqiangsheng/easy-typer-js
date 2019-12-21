@@ -1,5 +1,5 @@
 {
-  "name": "easy-typed-js",
+  "name": "easy-typer-js",
   "version": "1.0.0",
   "description": "Very powerful JS typewriter plugin, compatible with native JS and MVVM class framework (Vue, React...), whatever you want to output.",
   "repository": "https://github.com/pengqiangsheng/easyTyped.js",
@@ -7,12 +7,13 @@
   "main": "index.js",
   "author": "pqs 2945802136@qq.com",
   "keywords": [
-    "Typed",
-    "Typing",
+    "typed",
+    "typing",
     "easyTyped",
     "easy",
-    "easy-typed",
-    "easy-typed-js"
+    "typer",
+    "easy-typer",
+    "easy-typer-js"
   ],
   "license": "MIT"
 }
