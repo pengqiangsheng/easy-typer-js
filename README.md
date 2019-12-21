@@ -46,7 +46,9 @@ const typed = new EasyTyper(obj, input, fn, hooks)
     <span class="easy-typed-cursor">|</span>
   </div>
 </template>
+
 <script>
+import EasyTyper from 'easy-typer-js'
 export default {
   name: 'home',
   data() {
@@ -88,6 +90,7 @@ export default {
   }
 }
 </script>
+
 <style lang="stylus">
   .typed-cursor
     margin-left: 10px
@@ -180,12 +183,12 @@ export default {
 </script>
 ```
 > 效果如下
-![](http://img.pqs.guozhaoxi.top/Amaranthe%20-%20Digital%20World_2.gif)
+![](https://user-gold-cdn.xitu.io/2019/12/21/16f27f240fff13bd?w=1920&h=1080&f=gif&s=6786978)
 加载慢的同学可以看 http://img.pqs.guozhaoxi.top/20191221175917.MP4
 
-## 三、参数解析 ( Parameter configuration )
+# 三、参数解析 ( Parameter configuration )
 
-### 3.1 new EasyTyper(obj, input, fn, hooks)
+## 3.1 new EasyTyper(obj, input, fn, hooks)
 
 |参数|	说明	|回调 | 是否必须|
 |---|-------|-----|------|
@@ -222,7 +225,7 @@ export default {
     alert('stop!')
   }, 12000)
 ```
-### 3.2 obj配置
+## 3.2 obj配置
 
 | 参数(params)          | 含义(meaning)                                    | 默认值(default)  |
 | --------------------- | ----------------------------------------------- | ---------------- |
@@ -234,7 +237,7 @@ export default {
 | `sleep`               | 完整输出完一句话后，睡眠时间一定时间后回滚           |       NA         |
 | `singleBack`          | 单次的回滚（优先级高于type）                       |      NA         |
 
-### 3.3 暴露出可直接调用方法
+## 3.3 暴露出可直接调用方法
 
 |方法名|	说明	|参数 |
 |---|-------|-----|
@@ -242,7 +245,7 @@ export default {
 |`sleep`|	单独可以调用睡眠线程，可以使用在任何地方 | ms(毫秒) |
 
 
-## 四、更多请查阅
+# 四、更多请查阅
 - easy-typer-js官网: http://inner.ink
-- Github文档地址: https://github.com/pengqiangsheng/easy-typer-js.js
+- Github文档地址: https://github.com/pengqiangsheng/easy-typer-js
 - CDN地址: https://cdn.jsdelivr.net/npm/easy-typer-js@1.0.1/easyTyper.min.js
