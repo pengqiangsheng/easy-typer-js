@@ -1,3 +1,3 @@
-import EasyTyper from './src/lib/easyTyper.origin'
+import EasyTyper from './src/lib/easy-type-origin'
 
 export default EasyTyper

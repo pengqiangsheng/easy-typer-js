@@ -44,10 +44,10 @@ const typed = new EasyTyper(obj, input, fn, hooks)
 
 ```js
 // 下载至本地
-<script src="./easy-typer-js"></script>
+<script src="./easy-typer-min.js"></script>
 
 //cdn导入
-<script src="https://cdn.jsdelivr.net/npm/easy-typer-js@1.0.1/easyTyper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/easy-typer-js@1.0.3/easy-typer-min.js"></script>
 ```
 
 ### 2.2 使用它作为你最强大的武器吧！
@@ -355,7 +355,7 @@ export default showText
 
 ```html
 <div id="output"></div>
-<script src="../lib/esayTyper.js"></script>
+<script src="../lib/esay-typer-min.js"></script>
 ```
 ```js
 

@@ -6,7 +6,6 @@
  * @param {*钩子 钩在每一帧将要完成的时间片段上} hooks
  */
 export default class EasyTyper {
-
   // 构造器
   constructor(obj, input, fn, hooks) {
     this.props = {
