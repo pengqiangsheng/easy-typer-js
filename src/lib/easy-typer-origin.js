@@ -1,3 +1,4 @@
+'use strict'
 /**
  * EastTyped 超简易的js打字机效果功能
  * @param {*配置对象} obj
@@ -115,43 +116,16 @@ export default class EasyTyper {
 
   // 检验参数类型
   checkFieldIsError(obj) {
-    const { 
-      output,
-      type,
-      isEnd,
-      speed,
-      backSpeed,
-      sleep,
-      singleBack
-    } = obj
-    if(typeof output !== 'string') {
-      this.errorTip(`output 必须为 string 类型`)
-      return true
-    }
-    if(typeof type !== 'string') {
-      this.errorTip(`type 必须为 string 类型`)
-      return true
-    }
-    if(typeof isEnd !== 'boolean') {
-      this.errorTip(`isEnd 必须为 boolean 类型`)
-      return true
-    }
-    if(typeof speed !== 'number') {
-      this.errorTip(`speed 必须为 number 类型`)
-      return true
-    }
-    if(typeof backSpeed !== 'number') {
-      this.errorTip(`backSpeed 必须为 number 类型`)
-      return true
-    }
-    if(typeof sleep !== 'number') {
-      this.errorTip(`sleep 必须为 number 类型`)
-      return true
-    }
-    if(typeof singleBack !== 'boolean') {
-      this.errorTip(`singleBack 必须为 boolean 类型`)
-      return true
-    }
+    let flag = false
+    Object.keys(obj).forEach(key => {
+      const proxy = EasyTyperStrategy[key](obj)
+      if(proxy.check()) {
+        proxy.showTip(key)
+        flag = true
+        return
+      }
+    })
+    return flag
   }
 
   // 线程等待
@@ -170,6 +144,44 @@ export default class EasyTyper {
   }
 }
 
+// 策略分发
+const EasyTyperStrategy = (() => ({
+  output: obj => {
+    return new CheckField(`string`, obj.output)
+  },
+  type: obj => {
+    return new CheckField(`string`, obj.type)
+  },
+  isEnd: obj => {
+    return new CheckField(`boolean`, obj.isEnd)
+  },
+  speed: obj => {
+    return new CheckField(`number`, obj.speed)
+  },
+  backSpeed: obj => {
+    return new CheckField(`number`, obj.backSpeed)
+  },
+  sleep: obj => {
+    return new CheckField(`number`, obj.sleep)
+  },
+  singleBack: obj => {
+    return new CheckField(`boolean`, obj.singleBack)
+  }
+}))()
+
+// 字段校验类
+class CheckField {
+  constructor(type, field) {
+    this.type = type
+    this.field = field
+  }
+  check() {
+    return typeof this.field !== `${this.type}`
+  }
+  showTip(name) {
+    console.error(`${name} 必须为 ${this.type} 类型！`)
+  }
+}
 
 
 

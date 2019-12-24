@@ -1,4 +1,4 @@
-<script src="../../easy-typer-min.js"></script>
+<script src="../lib/easy-typer-min.js"></script>
 <style>
   .easy-typed-cursor {
     margin-left: 10px;
@@ -49,9 +49,7 @@
   
     
 </style>
-<div id="output">
-
-</div>
+<div id="output"></div>
 <script>
   const obj = {
     output: '', // 输出内容  使用MVVM框架时可以直接使用
@@ -76,6 +74,7 @@
     clearTimeout(timer)
     timer = null
     typing.close()
-    alert('stop!')
+    console.log('stop!')
+    // alert('stop!')
   }, 12000)
 </script>
