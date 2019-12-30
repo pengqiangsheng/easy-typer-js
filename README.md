@@ -2,6 +2,7 @@
 <a href="https://www.npmjs.com/package/easy-typer-js"><img src="https://img.shields.io/npm/v/easy-typer-js.svg" alt="Version"></a>
 <a href="https://www.npmjs.com/package/easy-typer-js"><img src="https://img.shields.io/npm/l/easy-typer-js.svg" alt="License"></a>
 <a href="https://npmcharts.com/compare/easy-typer-js?minimal=true"><img src="https://img.shields.io/npm/dm/easy-typer-js.svg" alt="Downloads"></a>
+[![](https://data.jsdelivr.com/v1/package/npm/easy-typer-js/badge)](https://www.jsdelivr.com/package/npm/easy-typer-js)
 
 > 功能十分强大打字机插件，兼容原生JS和MVVM类框架（Vue,React,angular），随心所欲的输出任何你想输出的内容。
 
@@ -17,6 +18,28 @@
 ## 去我的站点看真正的效果
 
 => [彭小呆的随笔杂谈](https://docs.inner.ink)  <=
+
+
+## 1.1.0更新内容说明
+
+- 更新了输入源可以为一个数组，与原有模式兼容
+- 更新了句子暂停模式（在*rollback*模式下生效）
+
+```js
+  const obj = {
+    sentencePause: true // 最后一句将会暂停回滚，常显示下去
+  }
+  // 数组模式 根据顺序一句一句输出
+  const inputArr = [`黎明前的黑暗是最深不见底的黑暗！`, `世界上本没有无用的齿轮，只有齿轮自身能决定它的用途！`, `天不生我彭小呆，万古长青一生狂！`]
+  const typing = new EasyTyper(obj, inputArr, ()=>{
+    // 回调函数，easyTyper生命周期结束后执行
+    console.log('结束了，我的使命！')
+  }, (output, instance) => {
+    // 钩子函数，每一帧的数据获取和实例EasyTyper的获取
+    document.getElementById('output').innerHTML = `${output}`
+  })
+```
+
 
 ## 一、效果展示
 ![](https://user-gold-cdn.xitu.io/2019/12/23/16f318822f07041c?w=480&h=270&f=gif&s=1386069)
@@ -419,6 +442,7 @@ let timer = setTimeout(() => {
 | `backSpeed`           | 回滚速度                                          |      number          |
 | `sleep`               | 完整输出完一句话后，睡眠一定时间后触发回滚事件           |       number         |
 | `singleBack`          | 单次的回滚（优先级高于type）                       |      boolean         |
+| `sentencePause`       | 整个生命周期运行完毕后，句子是否暂停显示             |      boolean         |
 
 obj配置对象校验非常严格，对象的字段和类型都要遵从以上格式，否则你会在控制台看到一个非常显眼的error！
 
