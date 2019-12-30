@@ -9,7 +9,8 @@ class EasyTyper {
       speed: 80,
       backSpeed: 40,
       sleep: 6000,
-      singleBack: false
+      singleBack: false,
+      sentencePause: false
     }
     if(this.checkKeyIsNull(obj)){
       return this.errorTip(`EsayTyped.js: 配置对象中有一个字段是undefined或null，请仔细检查对象是否完整！！！`)
@@ -19,14 +20,16 @@ class EasyTyper {
     }
     this.obj = obj
     this.input = input || '抱歉，没有内容输入'
+    this.input = !(this.input instanceof Array) ? [this.input] : this.input
     this.fn = typeof fn === 'function' ? fn : function() {}
     this.hooks = typeof hooks === 'function' ? hooks : function() {}
     this.timer = null
     this.close = this.close
     this.sleep = this.sleep
+    this.sentenceCallTimes = 0 // 句子回调次数
     this.typeAction = {
       'rollback': this.typedBack.bind(this),
-      'normal': this.fn,
+      'normal': this.play.bind(this),
       'custom': this.fn
     }
     this._init()
@@ -39,9 +42,11 @@ class EasyTyper {
 
   // 打字
   play() {
-    let i = 0, stop = false
+    if(!this.input.length) return this.fn(this)
+
+    let i = 0, stop = false, input = this.input.shift()
     this.timer = setInterval(() => {
-      if(i === this.input.length) {
+      if(i === input.length) {
         i = 0
         stop = true
         this.closeTimer()
@@ -51,14 +56,17 @@ class EasyTyper {
 
       if(stop) return this.nextTick()
 
-      this.obj.output = this.input.slice(0, i + 1)
-      this.hooks(this.input.slice(0, i + 1), this)
+      this.obj.output = input.slice(0, i + 1)
+      this.hooks(input.slice(0, i + 1), this)
       i++
     }, this.obj.speed)
   }
 
   // 回滚方法
   typedBack() {
+    // 如果句子出书完毕，且是句子暂停模式
+    if(!this.input.length && this.obj.sentencePause) return this.fn(this)
+
     let input = this.obj.output
     let i = input.length, stop = false
     this.timer = setInterval(() => {
@@ -75,7 +83,10 @@ class EasyTyper {
       }
       if(stop) {
         this.obj.singleBack = false
-        return this.fn(this)
+        return (() => {
+          const { length } = this.input
+          return length ? this.play() : this.fn(this)
+        })()
       }
       this.obj.output = input.slice(0, i + 1)
       this.hooks(input.slice(0, i + 1), this)
@@ -96,6 +107,7 @@ class EasyTyper {
 
   // 下一次触发方式
   async nextTick() {
+    // 等待
     await this.sleep(this.obj.sleep)
     return this.obj.singleBack ? this.typedBack() : this.getOutputType()
   }
@@ -114,8 +126,7 @@ class EasyTyper {
       const proxy = EasyTyperStrategy[key](obj)
       if(proxy.check()) {
         proxy.showTip(key)
-        flag = true
-        return
+        return flag = true
       }
     })
     return flag
@@ -159,7 +170,10 @@ const EasyTyperStrategy = (() => ({
   },
   singleBack: obj => {
     return new CheckField(`boolean`, obj.singleBack)
-  }
+  },
+  sentencePause: obj => {
+    return new CheckField(`boolean`, obj.sentencePause)
+  },
 }))()
 
 // 字段校验类
