@@ -475,7 +475,7 @@ obj配置对象校验非常严格，对象的字段和类型都要遵从以上�
 
 - easy-typer-js官网: [https://docs.inner.ink/typer/](https://docs.inner.ink/typer/)
 - Github文档地址: [https://github.com/pengqiangsheng/easy-typer-js](https://github.com/pengqiangsheng/easy-typer-js)
-- CDN地址: [https://cdn.jsdelivr.net/npm/easy-typer-js@1.0.1/easyTyper.min.js](https://cdn.jsdelivr.net/npm/easy-typer-js@1.0.1/easyTyper.min.js)
+- CDN地址: [https://cdn.jsdelivr.net/npm/easy-typer-js@1.0.3/easy-typer-min.js](https://cdn.jsdelivr.net/npm/easy-typer-js@1.0.3/easy-typer-min.js)
 
 
 ## 六、计划更新内容
