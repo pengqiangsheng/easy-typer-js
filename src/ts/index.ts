@@ -42,9 +42,12 @@ class EasyTyper {
     // 实例化完后立即执行打字输出
     this.init();
   }
+  
+  // 初始化
   init() {
     this.play();
   }
+
   // 打字
   play() {
     if(!this.input.length) return this.fn(this)
