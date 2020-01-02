@@ -137,7 +137,7 @@ class showText extends React.Component {
       sleep: 0,
       type: 'normal',
       backSpeed: 40,
-      sentencePause：false
+      sentencePause: false
     }
     // 实例化
     this.typer = new EasyTyper(obj, '我是被React所创造出来的！', this.completeAsentence, this.changeOutput)
@@ -199,7 +199,7 @@ export default {
         sleep: 0,
         type: 'rollback',
         backSpeed: 40,
-        sentencePause：false
+        sentencePause: false
       }
     }
   },
@@ -313,7 +313,7 @@ class showText extends React.Component {
       sleep: 0,
       type: 'normal',
       backSpeed: 40,
-      sentencePause：false
+      sentencePause: false
     }
     // 实例化
     this.typer = new EasyTyper(obj, '我是被React所创造出来的！', this.completeAsentence, this.changeOutput)
@@ -377,12 +377,12 @@ const obj = {
   backSpeed: 40,
   sleep: 3000,
   singleBack: true,
-  sentencePause：false
+  sentencePause: false
 }
 const typing = new easyTyper(obj, `黎明前的黑暗是最深不见底的黑暗！`, (instance)=>{
     // 回调函数 如果这里使用了递归调用会一直循环打印，需要在外部触发停止
     // 此回调用于获取新的数据然后重新输出
-    instance.input = `天不生我彭小呆，万古长青一生狂！`
+    instance.input = [`天不生我彭小呆，万古长青一生狂！`]
     instance.play()
   }, (output, instance)=>{
     // 钩子函数，每一帧的数据获取和实例easy-typer-js的获取
