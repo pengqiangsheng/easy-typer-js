@@ -453,7 +453,7 @@ obj配置对象校验非常严格，对象的字段和类型都要遵从以上�
 
 ## 五、更多请查阅
 
-- easy-typer-js官网: [https://docs.inner.ink/typer/](https://docs.inner.ink/typer/)
+- easy-typer-js官网: [https://inner.ink/typer/](https://inner.ink/typer/)
 - Github文档地址: [https://github.com/pengqiangsheng/easy-typer-js](https://github.com/pengqiangsheng/easy-typer-js)
 - CDN地址: [https://cdn.jsdelivr.net/npm/easy-typer-js@1.0.3/easy-typer-min.js](https://cdn.jsdelivr.net/npm/easy-typer-js@1.0.3/easy-typer-min.js)
 
