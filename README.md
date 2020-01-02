@@ -489,3 +489,7 @@ obj配置对象校验非常严格，对象的字段和类型都要遵从以上�
     document.getElementById('output').innerHTML = `${output}`
   })
 ```
+
+### 2.0.0
+
+- 重构源码，全面支持TS
