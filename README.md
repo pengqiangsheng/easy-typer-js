@@ -1,10 +1,12 @@
 # easy-typer-js
+
 <a href="https://www.npmjs.com/package/easy-typer-js"><img src="https://img.shields.io/npm/v/easy-typer-js.svg" alt="Version"></a>
 <a href="https://www.npmjs.com/package/easy-typer-js"><img src="https://img.shields.io/npm/l/easy-typer-js.svg" alt="License"></a>
 <a href="https://npmcharts.com/compare/easy-typer-js?minimal=true"><img src="https://img.shields.io/npm/dm/easy-typer-js.svg" alt="Downloads"></a>
 [![](https://data.jsdelivr.com/v1/package/npm/easy-typer-js/badge)](https://www.jsdelivr.com/package/npm/easy-typer-js)
 
 > 功能十分强大打字机插件，兼容原生JS和MVVM类框架（Vue,React,angular），随心所欲的输出任何你想输出的内容。
+
 
 
 ## 特点（优势）
@@ -17,12 +19,14 @@
 
 ## 去我的站点看真正的效果
 
-=> [彭小呆的随笔杂谈](https://docs.inner.ink)  <=
+=> [彭小呆的随笔杂谈](https://inner.ink)  <=
+
 
 
 
 ## 一、效果展示
-![](https://user-gold-cdn.xitu.io/2019/12/23/16f318822f07041c?w=480&h=270&f=gif&s=1386069)
+![](https://user-gold-cdn.xitu.io/2019/12/23/16f325042e4afa28?w=822&h=590&f=gif&s=113630)
+![](https://user-gold-cdn.xitu.io/2019/12/23/16f324f83b23d43f?w=813&h=508&f=gif&s=155566)
 > easy-typer-js是一个轻量级的插件, 用于实现页面文字的打字机效果. 它使用起来非常简单, 只需要几行代码就能实现高大上的打字机效果.而且对MVVM框架支持完美，还兼容原生JS.
 
 
@@ -47,7 +51,7 @@ const typed = new EasyTyper(obj, input, fn, hooks)
 
 ```js
 // 下载至本地
-<script src="./easy-typer-min.js"></script>
+<script src="./easy-typer-js"></script>
 
 //cdn导入
 <script src="https://cdn.jsdelivr.net/npm/easy-typer-js@1.0.3/easy-typer-min.js"></script>
@@ -107,7 +111,7 @@ export default {
 
 > 打开页面你会发现`我是被React所创造出来的！`这句话上帝所诉说！
 
-![](https://user-gold-cdn.xitu.io/2019/12/23/16f3170f33d55a1b?w=480&h=270&f=gif&s=1189933)
+![](https://user-gold-cdn.xitu.io/2019/12/23/16f32526f656e5e1?w=813&h=600&f=gif&s=748601)
 
 ```js
 import EasyTyper from 'easy-typer-js'
@@ -132,7 +136,8 @@ class showText extends React.Component {
       singleBack: false,
       sleep: 0,
       type: 'normal',
-      backSpeed: 40
+      backSpeed: 40,
+      sentencePause：false
     }
     // 实例化
     this.typer = new EasyTyper(obj, '我是被React所创造出来的！', this.completeAsentence, this.changeOutput)
@@ -193,7 +198,8 @@ export default {
         singleBack: false,
         sleep: 0,
         type: 'rollback',
-        backSpeed: 40
+        backSpeed: 40,
+        sentencePause：false
       }
     }
   },
@@ -264,7 +270,7 @@ export default {
 
 ##### 回滚时间`sleep`设置为0时的效果
 
-![](https://user-gold-cdn.xitu.io/2019/12/21/16f27c7653b345ee?w=1920&h=1080&f=gif&s=3531097)
+![](https://user-gold-cdn.xitu.io/2019/12/23/16f32533326539eb?w=1200&h=800&f=gif&s=146036)
 
 
 
@@ -306,7 +312,8 @@ class showText extends React.Component {
       singleBack: false,
       sleep: 0,
       type: 'normal',
-      backSpeed: 40
+      backSpeed: 40,
+      sentencePause：false
     }
     // 实例化
     this.typer = new EasyTyper(obj, '我是被React所创造出来的！', this.completeAsentence, this.changeOutput)
@@ -351,14 +358,14 @@ export default showText
 
 ##### 只输出一句话
 
-![](https://user-gold-cdn.xitu.io/2019/12/23/16f3170f33d55a1b?w=480&h=270&f=gif&s=1189933)
+![](https://user-gold-cdn.xitu.io/2019/12/23/16f32526f656e5e1?w=813&h=600&f=gif&s=748601)
 
 
 #### 2.3.3 原生实例
 
 ```html
 <div id="output"></div>
-<script src="../lib/esay-typer-min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/easy-typer-js@1.0.3/easy-typer-min.js"></script>
 ```
 ```js
 
@@ -369,7 +376,8 @@ const obj = {
   speed: 80,
   backSpeed: 40,
   sleep: 3000,
-  singleBack: true
+  singleBack: true,
+  sentencePause：false
 }
 const typing = new easyTyper(obj, `黎明前的黑暗是最深不见底的黑暗！`, (instance)=>{
     // 回调函数 如果这里使用了递归调用会一直循环打印，需要在外部触发停止
@@ -392,9 +400,10 @@ let timer = setTimeout(() => {
 
 > 效果如下！！！
 
-##### 第一句输出后回滚，第二句和第三句不回滚！
+##### 第一句输出后回滚，后面不回滚！
 
-![](https://user-gold-cdn.xitu.io/2019/12/21/16f27f240fff13bd?w=1920&h=1080&f=gif&s=6786978)
+![](https://user-gold-cdn.xitu.io/2019/12/23/16f325115a964e14?w=627&h=254&f=gif&s=46466)
+
 
 
 ## 三、参数解析
@@ -423,7 +432,6 @@ let timer = setTimeout(() => {
 | `sleep`               | 完整输出完一句话后，睡眠一定时间后触发回滚事件           |       number         |
 | `singleBack`          | 单次的回滚（优先级高于type）                       |      boolean         |
 | `sentencePause`       | 整个生命周期运行完毕后，句子是否暂停显示（仅在回滚模式下生效）             |      boolean         |
-
 obj配置对象校验非常严格，对象的字段和类型都要遵从以上格式，否则你会在控制台看到一个非常显眼的error！
 
 
@@ -467,12 +475,13 @@ obj配置对象校验非常严格，对象的字段和类型都要遵从以上�
 如果这篇文章能够帮到你什么，希望能花一点时间帮我点个赞👍b(￣▽￣)d。
 =.=[戳我点赞](https://github.com/pengqiangsheng/easy-typer-js)😊
 
+
+
 ## 八、更新内容说明
 
 ### 1.1.0
-
 - 更新了输入源可以为一个数组，与原有模式兼容
-- 更新了句子暂停模式（在*rollback*模式下生效）
+- 更新了句子暂停模式（在**rollback**模式下生效）
 
 ```js
   const obj = {
@@ -492,4 +501,4 @@ obj配置对象校验非常严格，对象的字段和类型都要遵从以上�
 
 ### 2.0.0
 
-- 重构源码，全面支持TS
+- 重构源码，全面支持TS！
