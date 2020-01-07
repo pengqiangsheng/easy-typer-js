@@ -10,9 +10,13 @@
   "license": "MIT",
   "scripts": {
     "build": "tsc",
-    "release": "tsc && npm publish"
+    "release": "tsc && npm publish",
+    "test": "jest"
   },
   "devDependencies": {
+    "@babel/preset-env": "^7.7.7",
+    "@babel/preset-typescript": "^7.7.7",
+    "jest": "^24.9.0",
     "typescript": "^3.5.3"
   },
   "keywords": [
