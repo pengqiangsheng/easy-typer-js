@@ -13,8 +13,8 @@ const obj = {
 
 let result = ''
 
-const typed = () => {
-  new EasyTyper(obj, `黎明前的黑暗是最深不见底的黑暗！`, ()=>{
+const typed = (context) => {
+  new EasyTyper(obj, context, ()=>{
     console.log('result', result)
   }, (output, instance) => {
     result = `${output}`
@@ -23,8 +23,16 @@ const typed = () => {
 
 jest.useFakeTimers();
 
-test('是否能完整输出一句话', () => {
-  typed();
+
+it('1. 输出：黎明前的黑暗是最深不见底的黑暗！', () => {
+  typed('黎明前的黑暗是最深不见底的黑暗！');
   jest.runAllTimers();
   expect(result).toBe('黎明前的黑暗是最深不见底的黑暗！')
+});
+
+
+it('2. 输出：人活着就是为了提升心性，磨炼灵魂！', () => {
+  typed('人活着就是为了提升心性，磨炼灵魂！');
+  jest.runAllTimers();
+  expect(result).toBe('人活着就是为了提升心性，磨炼灵魂！')
 });
