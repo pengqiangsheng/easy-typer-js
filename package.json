@@ -1,6 +1,6 @@
 {
   "name": "easy-typer-js",
-  "version": "2.0.1",
+  "version": "2.1.0",
   "description": "Very powerful JS typewriter plugin, compatible with native JS and MVVM class framework (Vue, React...), whatever you want to output.",
   "repository": "https://github.com/pengqiangsheng/easy-typer-js",
   "homepage": "https://github.com/pengqiangsheng/easy-typer-js",
