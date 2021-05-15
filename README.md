@@ -96,7 +96,7 @@ export default {
     return {
       obj: {
         output: '',
-        // 其他参数省略
+        // 其他参数省略，实际你需要完整配置哦T^T
       }
     }
   },
