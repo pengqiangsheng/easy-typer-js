@@ -19,7 +19,7 @@
 
 ## 去我的站点看真正的效果
 
-=> [彭小呆的随笔杂谈](https://inner.ink)  <=
+=> [彭小呆的随笔杂谈](https://redqueen.gitee.io)  <=
 
 
 
@@ -461,7 +461,7 @@ obj配置对象校验非常严格，对象的字段和类型都要遵从以上�
 
 ## 五、更多请查阅
 
-- easy-typer-js官网: [https://inner.ink/typer/](https://inner.ink/typer/)
+- easy-typer-js官网: [https://redqueen.gitee.io/typer/](https://redqueen.gitee.io/typer/)
 - Github文档地址: [https://github.com/pengqiangsheng/easy-typer-js](https://github.com/pengqiangsheng/easy-typer-js)
 - CDN地址: [https://cdn.jsdelivr.net/npm/easy-typer-js@1.0.3/easy-typer-min.js](https://cdn.jsdelivr.net/npm/easy-typer-js@1.0.3/easy-typer-min.js)
 
