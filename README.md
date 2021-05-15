@@ -425,7 +425,7 @@ let timer = setTimeout(() => {
 | 参数(params)          | 含义(meaning)                                    | 类型(type)  |
 | --------------------- | ----------------------------------------------- | ---------------- |
 | `output`              | 输出内容,使用MVVM框架时直接使用 { obj.output }  |      string          |
-| `type`                | 下一次的行为 'roolback', 'normal', 'custom'       |      string(有且仅有此三种)    |
+| `type`                | 下一次的行为 'rollback', 'normal', 'custom'       |      string(有且仅有此三种)    |
 | `isEnd`               | 全局控制是否终止                                  |      boolean         |
 | `speed`               | 打字速度                                         |      number          |
 | `backSpeed`           | 回滚速度                                          |      number          |
