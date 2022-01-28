@@ -219,6 +219,7 @@ export default {
         })
         .then(({ hitokoto }) => {
             this.initTyped(hitokoto)
+        })
         .catch(err => {
             console.error(err)
         })
