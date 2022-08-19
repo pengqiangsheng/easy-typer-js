@@ -23,6 +23,43 @@
 => [彭小呆的随笔杂谈](https://redqueen.gitee.io)  <=
 
 
+# Vue3的支持
+
+> 很多小伙伴说vue3运行不来，在这里说明一下，是可以完美运行的。配置如下。
+
+```vue
+<script setup>
+import { reactive, onMounted  } from 'vue'
+// 引入
+import EasyTyper from 'easy-typer-js'
+
+// 计算属性
+const obj = reactive({
+  output: '',
+  isEnd: false,
+  speed: 80,
+  singleBack: true,
+  sleep: 0,
+  type: 'normal',
+  backSpeed: 40,
+  sentencePause: false
+})
+
+// 实例化
+onMounted(() => {
+  const typed = new EasyTyper(obj, `我是Vue3输出的内容`)
+})
+
+</script>
+
+<template>
+  <div>{{ obj.output }}</div>
+</template>
+
+<style scoped>
+</style>
+
+```
 
 
 ## 一、效果展示
